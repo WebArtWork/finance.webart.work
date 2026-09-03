@@ -20,7 +20,27 @@ import { provideNgxSocket } from '@wawjs/ngx-socket';
 import { provideNgxTinymce } from '@wawjs/ngx-tinymce';
 import { provideTranslate } from '@wawjs/ngx-translate';
 import { provideNgxPrime } from '@wawjs/ngx-prime/config';
+import { definePreset } from '@wawjs/css-prime-styled';
 import Aura from '@wawjs/css-prime-themes/aura';
+
+/** Finance brand green, matched to the logo's growth-arrow color. */
+const FinancePreset = definePreset(Aura, {
+	semantic: {
+		primary: {
+			50: '#e8f9f1',
+			100: '#c6f0dc',
+			200: '#8fe0ba',
+			300: '#57cf98',
+			400: '#2fbb7e',
+			500: '#1fa971',
+			600: '#178a5c',
+			700: '#136f4a',
+			800: '#0f573a',
+			900: '#0c452e',
+			950: '#072a1c',
+		},
+	},
+});
 import { NgxBosConfig, ngxBosProvide } from '@wawjs/ngx-bos';
 import { io } from 'socket.io-client';
 import { environment } from '@env';
@@ -73,7 +93,7 @@ export const appConfig: ApplicationConfig = {
 		}),
 		provideNgxPrime({
 			theme: {
-				preset: Aura,
+				preset: FinancePreset,
 				options: { darkModeSelector: "[data-mode='dark']" },
 			},
 		}),
