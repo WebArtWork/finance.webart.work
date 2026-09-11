@@ -75,6 +75,60 @@ export const routes: Routes = [
 					import('./pages/share/share.routes').then((m) => m.routes),
 			},
 			{
+				path: 'advisors',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Радники',
+						description: 'Знайдіть перевіреного фінансового радника для планування заощаджень, інвестицій та податків.',
+					},
+				},
+				loadChildren: () =>
+					import('./pages/advisors/advisors.routes').then(
+						(m) => m.routes,
+					),
+			},
+			{
+				path: 'companies',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Компанії',
+						description: 'Компанії та фінансові інституції, що залучають фінансування через Finance.',
+					},
+				},
+				loadChildren: () =>
+					import('./pages/companies/companies.routes').then(
+						(m) => m.routes,
+					),
+			},
+			{
+				path: 'investments',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Інвестиції',
+						description: 'Огляньте інвестиційні можливості: раунди фінансування, облігації та частки в компаніях.',
+					},
+				},
+				loadChildren: () =>
+					import('./pages/investments/investments.routes').then(
+						(m) => m.routes,
+					),
+			},
+			{
+				path: 'feed',
+				canActivate: [MetaGuard],
+				data: {
+					meta: {
+						title: 'Стрічка',
+						description: 'Останні події від радників, компаній та інвестиційних можливостей у Finance.',
+					},
+				},
+				loadChildren: () =>
+					import('./pages/feed/feed.routes').then((m) => m.routes),
+			},
+			{
 				path: 'for-users',
 				canActivate: [MetaGuard],
 				data: {

@@ -1,0 +1,20 @@
+<div class="list-page">
+	<header class="list-page__header">
+		<h1>{{ translateService.translate('Стрічка')() }}</h1>
+		<p>{{ translateService.translate('Останні події від радників, компаній та інвестиційних можливостей у Finance.')() }}</p>
+	</header>
+
+	<div class="list-page__feed">
+		@for (item of items; track item.title) {
+			<div class="list-page__feed-row">
+				<span class="list-page__feed-date">{{ item.date }}</span>
+				<div class="list-page__feed-body">
+					<h3>{{ item.title }}</h3>
+					<span class="list-page__feed-source">{{ item.source }}</span>
+				</div>
+			</div>
+		}
+	</div>
+
+	<p class="list-page__empty">{{ translateService.translate('Це тестові дані. Персональна стрічка з’явиться найближчим часом.')() }}</p>
+</div>

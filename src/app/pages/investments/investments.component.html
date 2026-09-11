@@ -1,0 +1,18 @@
+<div class="list-page">
+	<header class="list-page__header">
+		<h1>{{ translateService.translate('Інвестиційні можливості')() }}</h1>
+		<p>{{ translateService.translate('Раунди фінансування, облігації та частки в компаніях, доступні для розгляду. Каталог поповнюється.')() }}</p>
+	</header>
+
+	<div class="list-page__grid">
+		@for (investment of investments; track investment.title) {
+			<div class="list-page__card list-page__card--stack">
+				<h3>{{ investment.title }}</h3>
+				<p>{{ investment.category }}</p>
+				<span class="list-page__target">{{ investment.target }}</span>
+			</div>
+		}
+	</div>
+
+	<p class="list-page__empty">{{ translateService.translate('Це тестові дані. Повний перелік можливостей з’явиться найближчим часом.')() }}</p>
+</div>

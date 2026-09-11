@@ -1,0 +1,20 @@
+<div class="list-page">
+	<header class="list-page__header">
+		<h1>{{ translateService.translate('Фінансові радники')() }}</h1>
+		<p>{{ translateService.translate('Перевірені радники допоможуть спланувати заощадження, інвестиції та податки. Каталог поповнюється.')() }}</p>
+	</header>
+
+	<div class="list-page__grid">
+		@for (advisor of advisors; track advisor.name) {
+			<div class="list-page__card">
+				<span class="list-page__avatar">{{ advisor.initials }}</span>
+				<div class="list-page__card-body">
+					<h3>{{ advisor.name }}</h3>
+					<p>{{ advisor.specialty }}</p>
+				</div>
+			</div>
+		}
+	</div>
+
+	<p class="list-page__empty">{{ translateService.translate('Це тестові дані. Повний список радників з’явиться найближчим часом.')() }}</p>
+</div>

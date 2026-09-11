@@ -1,0 +1,47 @@
+<nav
+	class="fixed inset-x-0 bottom-0 z-[100] hidden max-md:flex max-md:min-h-14 max-md:w-full max-md:items-center max-md:overflow-x-auto max-md:bg-[var(--c-bg-secondary)] max-md:px-1 max-md:shadow"
+>
+	<ul
+		class="m-0 flex w-full list-none items-center justify-evenly gap-0 p-0"
+	>
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/advisors"
+				[ariaLabel]="translateService.translate('Радники')()"
+				icon="id-card"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/companies"
+				[ariaLabel]="translateService.translate('Компанії')()"
+				icon="building"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/investments"
+				[ariaLabel]="translateService.translate('Інвестиції')()"
+				icon="chart-line"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				routerLink="/feed"
+				[ariaLabel]="translateService.translate('Стрічка')()"
+				icon="images"
+			/>
+		</li>
+
+		<li class="inline-flex flex-none items-center">
+			<app-nav-icon
+				[ariaLabel]="translateService.translate('Menu')()"
+				[icon]="menuIcon()"
+				(action)="onMenuClick()"
+			/>
+		</li>
+	</ul>
+</nav>
