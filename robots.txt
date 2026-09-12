@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /$
+Allow: /share$
+Allow: /for-users$
+Allow: /for-advisors$
+Allow: /for-companies$
+Allow: /for-investors$
+Allow: /sign$
+Disallow: /profile
+Disallow: /settings
+Disallow: /admin
+
+Sitemap: https://finance.webart.work/sitemap.xml
